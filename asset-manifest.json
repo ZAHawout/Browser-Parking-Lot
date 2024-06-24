@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Browser-Parking-Lot/static/css/main.964fdded.css",
+    "main.js": "/Browser-Parking-Lot/static/js/main.5979eaa8.js",
+    "index.html": "/Browser-Parking-Lot/index.html",
+    "main.964fdded.css.map": "/Browser-Parking-Lot/static/css/main.964fdded.css.map",
+    "main.5979eaa8.js.map": "/Browser-Parking-Lot/static/js/main.5979eaa8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.964fdded.css",
+    "static/js/main.5979eaa8.js"
+  ]
+}

@@ -19,10 +19,10 @@ The Browser Parking Lot enables you to eliminate tabs in your browser. Therefore
 ## User stories
 
 ```
-As an engineer I want to be able to organize information so that I can get the most out of my research. 
+As an engineer I want to be able to organize tabs easily so that I can get the most out of my research. 
 
-As a ...
+As a student, I want to be able to organize tutorial videos so that I can easily access the information later on.
 
-As a ...
+As a Youtuber, I want to be able to organize several video links so I can easily cross reference information.
 
 ```

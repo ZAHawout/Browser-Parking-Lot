@@ -15,7 +15,7 @@
 }
 
 .parking-lot-item-anchor:visited {
-    color: rgb(125, 224, 152);
+    color: rgb(0, 8, 255);
 }
 
 .card-header {
@@ -25,7 +25,7 @@
 }
 
 .delete-button {
-    background-color: darkred;
+    background-color: red;
     border: none;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
     border-radius: 50%;

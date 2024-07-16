@@ -1,6 +1,5 @@
 import React from 'react';
 import ParkingLotItem from './ParkingLotItem';
-
 import './ParkingLot.css';
 
 export default function ParkingLotList({ parkingLotItems, deleteItem }) {

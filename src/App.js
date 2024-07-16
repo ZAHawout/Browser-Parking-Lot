@@ -26,11 +26,11 @@ function App() {
         setParkingLotItems((oldItems) => [
             ...oldItems,
             {
-                id: nanoid(),
-                date,
-                description,
-                link,
-                priority,
+            id: nanoid(),
+            date,
+            description,
+            link,
+            priority,
             },
         ]);
     }
@@ -41,22 +41,21 @@ function App() {
         );
     }
 
-    return (
-        <div className="App">
-            <header>
-                <h1>Browser Parking Lot</h1>
-                <p>Send most of your browser tabs into retirement.</p>
-                <Timer />
-            </header>
-            <main>
-                <ParkingLotForm addItem={addItem} />
-                <ParkingLotList
-                    parkingLotItems={parkingLotItems}
-                    deleteItem={deleteItem}
-                />
-            </main>
-        </div>
+return (
+    <div className="App">
+        <header>
+            <h1>Browser Parking Lot</h1>
+            <p>Send most of your browser tabs into retirement.</p>
+            <Timer />
+        </header>
+        <main>
+            <ParkingLotForm addItem={addItem} />
+            <ParkingLotList
+                parkingLotItems={parkingLotItems}
+                deleteItem={deleteItem}
+            />
+        </main>
+    </div>
     );
 }
-
 export default App;

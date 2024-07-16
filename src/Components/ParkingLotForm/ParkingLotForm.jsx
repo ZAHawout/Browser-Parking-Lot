@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Form, Button, FormGroup, Label, Input } from 'reactstrap';
-
 import './ParkingLotForm.css';
 
 const PRIORITIES = {
@@ -11,28 +10,28 @@ const PRIORITIES = {
 
 export default function ParkingLotForm({ addItem }) {
 
-    const [date, setDate] = useState('');
-    const [link, setLink] = useState('');
-    const [description, setDescription] = useState('');
-    const [priority, setPriority] = useState(PRIORITIES.Medium);
+const [date, setDate] = useState('');
+const [link, setLink] = useState('');
+const [description, setDescription] = useState('');
+const [priority, setPriority] = useState(PRIORITIES.Medium);
 
-    function handleDateChange(e) {
+function handleDateChange(e) {
         setDate(e.target.value);
     }
 
-    function handleLinkChange(e) {
+function handleLinkChange(e) {
         setLink(e.target.value);
     }
 
-    function handleDescriptionChange(e) {
+function handleDescriptionChange(e) {
         setDescription(e.target.value);
     }
 
-    function handlePriorityChange(e) {
+function handlePriorityChange(e) {
         setPriority(e.target.value);
     }
 
-    function handleSubmit(e) {
+function handleSubmit(e) {
         e.preventDefault();
 
         // 2024-05-22 ---> 05/22/2024
@@ -43,85 +42,85 @@ export default function ParkingLotForm({ addItem }) {
         clearForm();
     }
 
-    function clearForm() {
+function clearForm() {
         setDate('');
         setLink('');
         setDescription('');
         setPriority(PRIORITIES.Medium);        
     }
 
-    return (
-        <Form 
-            data-bs-theme="dark" 
-            className="parking-lot-form"
-            onSubmit={handleSubmit}>
-            <FormGroup className="parking-lot-row">
-                <Label htmlFor="link-date">Date</Label>
+return (
+    <Form 
+        data-bs-theme="dark" 
+        className="parking-lot-form"
+        onSubmit={handleSubmit}>
+        <FormGroup className="parking-lot-row">
+            <Label htmlFor="link-date">Date</Label>
+            <Input 
+                id="link-date" 
+                name="date" 
+                type="date" 
+                onChange={handleDateChange}
+                value={date}
+                required />
+        </FormGroup>
+        <FormGroup className="parking-lot-row">
+            <Label htmlFor="link-url">Link</Label>
+            <Input 
+                id="link-url" 
+                name="url" 
+                type="url" 
+                onChange={handleLinkChange}
+                value={link}
+                required />
+        </FormGroup>
+        <FormGroup className="parking-lot-row">
+            <Label htmlFor="link-description">Description</Label>
+            <Input 
+                id="link-description" 
+                name="description" 
+                type="text" 
+                onChange={handleDescriptionChange} 
+                value={description}
+                required
+            />               
+        </FormGroup>
+        <FormGroup className="parking-lot-row d-flex flex-wrap">
+            <div>
                 <Input 
-                    id="link-date" 
-                    name="date" 
-                    type="date" 
-                    onChange={handleDateChange}
-                    value={date}
-                    required />
-            </FormGroup>
-            <FormGroup className="parking-lot-row">
-                <Label htmlFor="link-url">Link</Label>
+                    name="radio-priority" 
+                    type="radio" 
+                    value={PRIORITIES.High} 
+                    checked={priority === PRIORITIES.High}
+                    onChange={handlePriorityChange}
+                    id="prio-high" />
+                {' '}
+                <Label htmlFor="prio-high" className="me-3">High</Label>
+            </div>
+            <div>
                 <Input 
-                    id="link-url" 
-                    name="url" 
-                    type="url" 
-                    onChange={handleLinkChange}
-                    value={link}
-                    required />
-            </FormGroup>
-            <FormGroup className="parking-lot-row">
-                <Label htmlFor="link-description">Description</Label>
+                    name="radio-priority" 
+                    type="radio" 
+                    value={PRIORITIES.Medium}
+                    checked={priority === PRIORITIES.Medium}
+                    onChange={handlePriorityChange}
+                    id="prio-medium" />
+                {' '}
+                <Label htmlFor="prio-medium" className="me-3">Medium</Label>
+            </div>
+            <div>
                 <Input 
-                    id="link-description" 
-                    name="description" 
-                    type="text" 
-                    onChange={handleDescriptionChange} 
-                    value={description}
-                    required
-                />               
-            </FormGroup>
-            <FormGroup className="parking-lot-row d-flex flex-wrap">
-                <div>
-                    <Input 
-                        name="radio-priority" 
-                        type="radio" 
-                        value={PRIORITIES.High} 
-                        checked={priority === PRIORITIES.High}
-                        onChange={handlePriorityChange}
-                        id="prio-high" />
-                    {' '}
-                    <Label htmlFor="prio-high" className="me-3">High</Label>
-                </div>
-                <div>
-                    <Input 
-                        name="radio-priority" 
-                        type="radio" 
-                        value={PRIORITIES.Medium}
-                        checked={priority === PRIORITIES.Medium}
-                        onChange={handlePriorityChange}
-                        id="prio-medium" />
-                    {' '}
-                    <Label htmlFor="prio-medium" className="me-3">Medium</Label>
-                </div>
-                <div>
-                    <Input 
-                        name="radio-priority" 
-                        type="radio" 
-                        value={PRIORITIES.Low}
-                        checked={priority === PRIORITIES.Low}
-                        onChange={handlePriorityChange}
-                        id="prio-low" />
-                    {' '}
-                    <Label htmlFor="prio-low" className="me-3">Low</Label>
-                </div>
-            </FormGroup>
-            <Button type="submit">Submit</Button>
-        </Form>
-    );
+                    name="radio-priority" 
+                    type="radio" 
+                    value={PRIORITIES.Low}
+                    checked={priority === PRIORITIES.Low}
+                    onChange={handlePriorityChange}
+                    id="prio-low" />
+                {' '}
+                <Label htmlFor="prio-low" className="me-3">Low</Label>
+            </div>
+        </FormGroup>
+        <Button type="submit">Submit</Button>
+    </Form>
+);
 }
